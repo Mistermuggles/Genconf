@@ -1,4 +1,6 @@
 //Elise
+//Yann Endezoumou
+
 package genconf;
 
 import genconf.controleur.Controleur;

@@ -6,6 +6,9 @@
 package genconf.modele;
 
 import java.util.Date;
+import java.util.HashSet;
+
+import javax.sound.midi.Track;
 
 /**
  *
@@ -16,6 +19,10 @@ public class Session {
     private Date horaire;
     private boolean video;
     private boolean pleniere;
+    private HashSet<Communication> communications;
+    private Conference conference;
+    private HashSet<Utilisateur> animateurs;
+    private HashSet<Track> tracks;
 
     public Session(String titre, Date horaire, boolean video, boolean pleniere) {
         this.titre = titre;
@@ -55,5 +62,21 @@ public class Session {
     public void setPleniere(boolean pleniere) {
         this.pleniere = pleniere;
     }
+
+    public void setCommunications(Communication com)
+    {
+        communications.add(com);
+    }
+
+    public void setConference(Conference conf){
+        conference = conf;
+    }
+
+    public void setTrack(Track track){
+        tracks.add(track);
+    }
+
+
+
     
 }

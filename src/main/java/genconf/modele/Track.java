@@ -12,6 +12,7 @@ package genconf.modele;
 public class Track {
     private String couleur;
     private String libelle;
+    private Hashset<Session> sessions;
 
     public Track(String couleur, String libelle) {
         this.couleur = couleur;

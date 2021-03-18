@@ -13,6 +13,11 @@ public class Utilisateur implements Serializable {
     private String nom;
     private String prenom;
     private final Map<String, Conference> conferencesAdministrees;  // association qualifiée par le nom
+    private HashSet<Session> sessionAnimees;   //un utilisateur peut animé plusieurs sessions
+    private Map<String,Conference> conferencesInscrit;
+    private HashSet<Communication> comOrateur;
+    private HashSet<Communication> comPrincipal; 
+
 
     public Utilisateur(String email, String nom, String prenom) {
         assert EmailValidator.getInstance(false, false).isValid(email);

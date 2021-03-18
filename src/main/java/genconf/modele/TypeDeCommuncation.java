@@ -14,6 +14,8 @@ public class TypeDeCommuncation {
     private String libelle;
     private boolean pdf;
     private boolean video;
+    private Conference conference;
+   // private HashSet<Communication> communications;
 
     public TypeDeCommuncation(String libelle, boolean pdf, boolean video) {
         this.libelle = libelle;
@@ -43,6 +45,10 @@ public class TypeDeCommuncation {
 
     public void setVideo(boolean video) {
         this.video = video;
+    }
+
+    public void setConference(Conference conf){
+        this.conference = conf;
     }
     
     

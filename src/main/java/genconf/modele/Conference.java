@@ -15,6 +15,8 @@ public class Conference implements Serializable {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private final Map<String, Utilisateur> administrateurs;  // association qualifiée par l'email
+    private HashMap<String, Utilisateur> utilisateurs;
+    private HashMap<Integer, Communication> communication;
 
     // Invariant de classe : !dateDebut.isAfter(dateFin)
     //     On utilise la négation ici pour exprimer (dateDebut <= dateFin), ce

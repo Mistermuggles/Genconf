@@ -14,6 +14,7 @@ import java.util.function.Function;
 import org.apache.commons.validator.routines.EmailValidator;
 
 
+
 /**
  * La classe CLI est responsable des interactions avec l'utilisa·teur/trice en
  * mode texte.

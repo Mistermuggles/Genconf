@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import jdk.internal.org.objectweb.asm.util.TraceSignatureVisitor;
+
 
 public class Conference implements Serializable {
 
@@ -15,8 +17,11 @@ public class Conference implements Serializable {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private final Map<String, Utilisateur> administrateurs;  // association qualifiée par l'email
-    private HashMap<String, Utilisateur> utilisateurs;
-    private HashMap<Integer, Communication> communication;
+    private HashMap<String, Utilisateur> inscrits;
+    private HashMap<Integer, Communication> communications;
+    private HashSet<Track> tracks;
+    private HashSet<Session> sessions;
+    private HashSet<TypeDeCommuncation> typeDeCommuncations;
 
     // Invariant de classe : !dateDebut.isAfter(dateFin)
     //     On utilise la négation ici pour exprimer (dateDebut <= dateFin), ce
@@ -69,4 +74,70 @@ public class Conference implements Serializable {
         this.administrateurs.put(admin.getEmail(), admin);
         admin.ajouteConferenceAdministree(this);
     }
+
+ 
+
+    public HashSet<> getTypeDeCommunications(){
+        return typeDeCommuncation;
+    }
+
+    public boolean existTypeDeCommunication(TypeDeCommuncation type)
+    {
+        int taille = typeDeCommuncation.size();
+        boolean res = false;
+        for(int i = 0; i<taille; i++)
+        {
+            if(typeDeCommuncations.get(i) == type)
+            {
+                res = true;
+            }
+        }
+        return res;
+    }
+
+    public HashSet<> getTracks(){
+        return tracks;
+    }
+
+    public HashSet<> getSessions(){
+        return tracks;
+    }
+
+    public HashSet<> getInscrits(){
+        return inscrits;
+    }
+
+    public Map<> getAdministrateurs(){
+        return administrateurs;
+    }
+
+    public boolean existInscrit(String mail){
+        int taille = this.inscrits.size();
+        boolean res = false;
+        for(int i = 0; i < taille; i++)
+        {
+            if(inscrits.get(i).getEmail() == mail)
+            {
+                res = true;
+            }
+        }
+        return res;
+    }
+
+    private void setTypeDeCommunication(TypeDeCommuncation type)
+    {
+        typeDeCommuncations.add(type);
+    }
+
+    public void setAdministrateur(Utilisateur admin)
+    {
+        administrateurs.add(admin);
+    }
+
+    public void setInscrit(Utilisateur inscrit)
+    {
+        inscrits.add(inscrit);
+    }
+
+
 }

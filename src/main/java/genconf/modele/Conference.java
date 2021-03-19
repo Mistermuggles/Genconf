@@ -81,7 +81,7 @@ public class Conference implements Serializable {
         return typeDeCommuncation;
     }
 
-    public boolean existTypeDeCommunication(TypeDeCommuncation type)
+    public boolean existTypeCommunication(TypeDeCommuncation type)
     {
         int taille = typeDeCommuncation.size();
         boolean res = false;
@@ -138,6 +138,5 @@ public class Conference implements Serializable {
     {
         inscrits.add(inscrit);
     }
-
 
 }
